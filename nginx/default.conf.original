@@ -2,11 +2,6 @@ upstream client {
     server client:3001;
 }
 
-upstream library-api {
-    server library-api:5000;
-}
-
-
 server {
     listen 80;
 
