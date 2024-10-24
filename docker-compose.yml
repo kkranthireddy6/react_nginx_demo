@@ -8,7 +8,6 @@ services:
          dockerfile: Dockerfile
       container_name: react_nginx_frontend
       volumes:
-         - ./node_modules
          - ./client:/
       # ports:
       #    - 3000:3000
