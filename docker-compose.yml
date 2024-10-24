@@ -2,15 +2,15 @@ version: "3.8"
 
 services:
 
-   reactpractice:
+   client:
       restart: always
       build:
-         context: ./reactpractice
+         context: ./client
          dockerfile: Dockerfile
       container_name: library_mern_frontend
       volumes:
          - ./app/node_modules
-         - ./reactpractice:/app
+         - ./client:/app
       # ports:
       #    - 3000:3000
       networks:
@@ -19,7 +19,7 @@ services:
    nginx:
       restart: always
       depends_on:
-         - reactpractice
+         - client
       build:
          context: ./nginx
          dockerfile: Dockerfile
