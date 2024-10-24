@@ -1,20 +1,19 @@
 version: "3.8"
 
 services:
-
    client:
       restart: always
       build:
          context: ./client
          dockerfile: Dockerfile
-      container_name: library_mern_frontend
+      container_name: reactjs_nginx_frontend
       volumes:
          - ./app/node_modules
          - ./client:/app
       # ports:
       #    - 3000:3000
       networks:
-         - library-react-nginx
+         - react_nginx_api
 
    nginx:
       restart: always
@@ -26,8 +25,8 @@ services:
       ports:
          - 8080:80
       networks:
-         - library-react-nginx
+         - react_nginx_api
 
 networks:
-   library-react-nginx:
+   react_nginx_api:
       driver: bridge
