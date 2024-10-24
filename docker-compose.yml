@@ -22,7 +22,7 @@ services:
          context: ./nginx
          dockerfile: Dockerfile
       ports:
-         - 8080:80
+         - 8086:80
       networks:
          - react_nginx-api
 
